@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1596595087755,
+  "lastUpdate": 1596596813594,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -13,126 +13,126 @@ window.BENCHMARK_DATA = {
             "name": "echeran",
             "username": "echeran"
           },
-          "id": "e377912caa670ca36f7731eb1f5bc94debd4bb2b",
+          "id": "10b652277f6373eae761a15345d55cf0c487fb76",
           "message": "Testing PR to test GH Actions CI for runtime perf benchmarking",
           "timestamp": "2020-07-27T21:18:27Z",
-          "url": "https://github.com/echeran/icu4x/pull/4/commits/e377912caa670ca36f7731eb1f5bc94debd4bb2b"
+          "url": "https://github.com/echeran/icu4x/pull/4/commits/10b652277f6373eae761a15345d55cf0c487fb76"
         },
-        "date": 1596595086087,
+        "date": 1596596811366,
         "tool": "cargo",
         "benches": [
           {
             "name": "langid/construct/langid",
-            "value": 557,
-            "range": "± 29",
+            "value": 782,
+            "range": "± 65",
             "unit": "ns/iter"
           },
           {
             "name": "langid/construct/locale",
-            "value": 941,
-            "range": "± 51",
+            "value": 1254,
+            "range": "± 89",
             "unit": "ns/iter"
           },
           {
             "name": "langid/to_string/langid",
-            "value": 1550,
-            "range": "± 91",
+            "value": 2020,
+            "range": "± 156",
             "unit": "ns/iter"
           },
           {
             "name": "langid/to_string/locale",
-            "value": 1548,
-            "range": "± 72",
+            "value": 2013,
+            "range": "± 54",
             "unit": "ns/iter"
           },
           {
             "name": "langid/compare/struct/langid",
-            "value": 13,
-            "range": "± 0",
+            "value": 18,
+            "range": "± 1",
             "unit": "ns/iter"
           },
           {
             "name": "langid/compare/struct/locale",
-            "value": 13,
-            "range": "± 0",
+            "value": 18,
+            "range": "± 1",
             "unit": "ns/iter"
           },
           {
             "name": "langid/compare/str/langid",
-            "value": 1891,
-            "range": "± 222",
+            "value": 2287,
+            "range": "± 112",
             "unit": "ns/iter"
           },
           {
             "name": "langid/compare/str/locale",
-            "value": 1878,
-            "range": "± 118",
+            "value": 2294,
+            "range": "± 166",
             "unit": "ns/iter"
           },
           {
             "name": "langid/canonicalize/langid",
-            "value": 2588,
-            "range": "± 128",
+            "value": 3823,
+            "range": "± 412",
             "unit": "ns/iter"
           },
           {
             "name": "langid/canonicalize/locale",
-            "value": 3836,
-            "range": "± 217",
+            "value": 5186,
+            "range": "± 416",
             "unit": "ns/iter"
           },
           {
             "name": "locale/construct/locale",
-            "value": 1732,
-            "range": "± 104",
+            "value": 2370,
+            "range": "± 146",
             "unit": "ns/iter"
           },
           {
             "name": "locale/to_string/locale",
-            "value": 2365,
-            "range": "± 137",
+            "value": 3206,
+            "range": "± 281",
             "unit": "ns/iter"
           },
           {
             "name": "locale/compare/struct/locale",
-            "value": 101,
+            "value": 118,
             "range": "± 4",
             "unit": "ns/iter"
           },
           {
             "name": "locale/compare/str/locale",
-            "value": 2385,
-            "range": "± 108",
+            "value": 3233,
+            "range": "± 373",
             "unit": "ns/iter"
           },
           {
             "name": "locale/canonicalize/locale",
-            "value": 4766,
-            "range": "± 405",
+            "value": 6611,
+            "range": "± 499",
             "unit": "ns/iter"
           },
           {
             "name": "language_subtag_parse",
-            "value": 257,
-            "range": "± 16",
+            "value": 341,
+            "range": "± 12",
             "unit": "ns/iter"
           },
           {
             "name": "script_subtag_parse",
-            "value": 84,
-            "range": "± 7",
-            "unit": "ns/iter"
-          },
-          {
-            "name": "region_subtag_parse",
-            "value": 93,
+            "value": 112,
             "range": "± 3",
             "unit": "ns/iter"
           },
           {
+            "name": "region_subtag_parse",
+            "value": 128,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
             "name": "variant_subtag_parse",
-            "value": 203,
-            "range": "± 14",
+            "value": 274,
+            "range": "± 17",
             "unit": "ns/iter"
           }
         ]
