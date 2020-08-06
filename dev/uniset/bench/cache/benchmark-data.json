@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1596681300761,
+  "lastUpdate": 1596681552979,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -18,31 +18,31 @@
           "timestamp": "2020-07-27T21:18:27Z",
           "url": "https://github.com/echeran/icu4x/pull/4/commits/48283dd923a713fcb5d5367483cced2dd7bf8031"
         },
-        "date": 1596681300761,
+        "date": 1596681552979,
         "tool": "cargo",
         "benches": [
           {
-            "name": "isize/smaller",
-            "value": 24864,
-            "range": "± 1444",
+            "name": "uniset/contains/best",
+            "value": 10,
+            "range": "± 0",
             "unit": "ns/iter"
           },
           {
-            "name": "isize/larger",
-            "value": 59899,
-            "range": "± 4056",
+            "name": "uniset/contains/worst",
+            "value": 10,
+            "range": "± 0",
             "unit": "ns/iter"
           },
           {
-            "name": "to_string/908070605040302010",
-            "value": 214,
-            "range": "± 16",
+            "name": "uniset/contains_range/best",
+            "value": 10,
+            "range": "± 0",
             "unit": "ns/iter"
           },
           {
-            "name": "write_to/908070605040302010",
-            "value": 101,
-            "range": "± 5",
+            "name": "uniset/contains_range/worst",
+            "value": 10,
+            "range": "± 0",
             "unit": "ns/iter"
           }
         ]
