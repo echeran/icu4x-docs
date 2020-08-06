@@ -1,11 +1,7 @@
 Gnuplot not found, using plotters backend
-test isize/smaller ... bench:       29905 ns/iter (+/- 1328)
+test uniset/contains/best ... bench:          11 ns/iter (+/- 0)
+test uniset/contains/worst ... bench:          11 ns/iter (+/- 0)
 
-test isize/larger ... bench:       72357 ns/iter (+/- 4313)
-
-test to_string/22.50 ... bench:          81 ns/iter (+/- 4)
-test to_string/908070605040302010 ... bench:         251 ns/iter (+/- 17)
-
-test write_to/22.50 ... bench:          42 ns/iter (+/- 2)
-test write_to/908070605040302010 ... bench:         118 ns/iter (+/- 8)
+test uniset/contains_range/best ... bench:          11 ns/iter (+/- 0)
+test uniset/contains_range/worst ... bench:          12 ns/iter (+/- 1)
 
