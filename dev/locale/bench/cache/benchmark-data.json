@@ -1,0 +1,142 @@
+{
+  "lastUpdate": 1596681002083,
+  "repoUrl": "https://github.com/echeran/icu4x",
+  "entries": {
+    "Rust Benchmark": [
+      {
+        "commit": {
+          "author": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "committer": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "id": "48283dd923a713fcb5d5367483cced2dd7bf8031",
+          "message": "Testing PR to test GH Actions CI for runtime perf benchmarking",
+          "timestamp": "2020-07-27T21:18:27Z",
+          "url": "https://github.com/echeran/icu4x/pull/4/commits/48283dd923a713fcb5d5367483cced2dd7bf8031"
+        },
+        "date": 1596681002083,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/construct/langid",
+            "value": 749,
+            "range": "± 21",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/construct/locale",
+            "value": 1261,
+            "range": "± 36",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/to_string/langid",
+            "value": 2205,
+            "range": "± 116",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/to_string/locale",
+            "value": 2255,
+            "range": "± 107",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/struct/langid",
+            "value": 18,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/struct/locale",
+            "value": 18,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/str/langid",
+            "value": 2362,
+            "range": "± 70",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/str/locale",
+            "value": 2406,
+            "range": "± 63",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/canonicalize/langid",
+            "value": 3554,
+            "range": "± 68",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/canonicalize/locale",
+            "value": 5347,
+            "range": "± 234",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/construct/locale",
+            "value": 2363,
+            "range": "± 77",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/to_string/locale",
+            "value": 3183,
+            "range": "± 92",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/compare/struct/locale",
+            "value": 124,
+            "range": "± 3",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/compare/str/locale",
+            "value": 3216,
+            "range": "± 304",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/canonicalize/locale",
+            "value": 6379,
+            "range": "± 276",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "language_subtag_parse",
+            "value": 348,
+            "range": "± 7",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "script_subtag_parse",
+            "value": 125,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "region_subtag_parse",
+            "value": 120,
+            "range": "± 5",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "variant_subtag_parse",
+            "value": 272,
+            "range": "± 7",
+            "unit": "ns/iter"
+          }
+        ]
+      }
+    ]
+  }
+}
