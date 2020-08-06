@@ -1,0 +1,52 @@
+{
+  "lastUpdate": 1596676930379,
+  "repoUrl": "https://github.com/echeran/icu4x",
+  "entries": {
+    "Rust Benchmark": [
+      {
+        "commit": {
+          "author": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "committer": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "id": "de9505bdafb05037af2a543d24d8ce2f1a4156c0",
+          "message": "Testing PR to test GH Actions CI for runtime perf benchmarking",
+          "timestamp": "2020-07-27T21:18:27Z",
+          "url": "https://github.com/echeran/icu4x/pull/4/commits/de9505bdafb05037af2a543d24d8ce2f1a4156c0"
+        },
+        "date": 1596676930378,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "isize/smaller",
+            "value": 31940,
+            "range": "± 1636",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "isize/larger",
+            "value": 79516,
+            "range": "± 5468",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "to_string/908070605040302010",
+            "value": 261,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "write_to/908070605040302010",
+            "value": 137,
+            "range": "± 3",
+            "unit": "ns/iter"
+          }
+        ]
+      }
+    ]
+  }
+}
