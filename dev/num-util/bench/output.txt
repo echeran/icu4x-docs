@@ -1,0 +1,11 @@
+Gnuplot not found, using plotters backend
+test isize/smaller ... bench:       25790 ns/iter (+/- 2118)
+
+test isize/larger ... bench:       62052 ns/iter (+/- 4147)
+
+test to_string/22.50 ... bench:          77 ns/iter (+/- 5)
+test to_string/908070605040302010 ... bench:         222 ns/iter (+/- 19)
+
+test write_to/22.50 ... bench:          36 ns/iter (+/- 2)
+test write_to/908070605040302010 ... bench:         107 ns/iter (+/- 8)
+
