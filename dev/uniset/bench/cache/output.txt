@@ -1,7 +1,0 @@
-Gnuplot not found, using plotters backend
-test uniset/contains/best ... bench:          10 ns/iter (+/- 0)
-test uniset/contains/worst ... bench:          11 ns/iter (+/- 0)
-
-test uniset/contains_range/best ... bench:          10 ns/iter (+/- 0)
-test uniset/contains_range/worst ... bench:          11 ns/iter (+/- 0)
-
