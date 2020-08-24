@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1596733128690,
+  "lastUpdate": 1598308254754,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -267,6 +267,140 @@ window.BENCHMARK_DATA = {
             "name": "variant_subtag_parse",
             "value": 262,
             "range": "± 8",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "committer": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "id": "2bc11dd5ecfa8f18ee2818718e793d99cded5656",
+          "message": "Testing PR to test GH Actions CI for runtime perf benchmarking",
+          "timestamp": "2020-08-19T00:33:20Z",
+          "url": "https://github.com/echeran/icu4x/pull/4/commits/2bc11dd5ecfa8f18ee2818718e793d99cded5656"
+        },
+        "date": 1598308252650,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "langid/construct/langid",
+            "value": 638,
+            "range": "± 48",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/construct/locale",
+            "value": 1296,
+            "range": "± 87",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/to_string/langid",
+            "value": 1863,
+            "range": "± 93",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/to_string/locale",
+            "value": 2039,
+            "range": "± 96",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/struct/langid",
+            "value": 15,
+            "range": "± 2",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/struct/locale",
+            "value": 16,
+            "range": "± 0",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/str/langid",
+            "value": 2274,
+            "range": "± 123",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/compare/str/locale",
+            "value": 2318,
+            "range": "± 143",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/canonicalize/langid",
+            "value": 3627,
+            "range": "± 168",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "langid/canonicalize/locale",
+            "value": 5302,
+            "range": "± 277",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/construct/locale",
+            "value": 2354,
+            "range": "± 128",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/to_string/locale",
+            "value": 3455,
+            "range": "± 180",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/compare/struct/locale",
+            "value": 120,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/compare/str/locale",
+            "value": 3604,
+            "range": "± 121",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "locale/canonicalize/locale",
+            "value": 7135,
+            "range": "± 400",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "language_subtag_parse",
+            "value": 340,
+            "range": "± 15",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "script_subtag_parse",
+            "value": 120,
+            "range": "± 6",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "region_subtag_parse",
+            "value": 127,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "variant_subtag_parse",
+            "value": 265,
+            "range": "± 10",
             "unit": "ns/iter"
           }
         ]
