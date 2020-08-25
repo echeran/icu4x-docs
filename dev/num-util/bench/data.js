@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1598309516426,
+  "lastUpdate": 1598380388165,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -130,6 +130,50 @@ window.BENCHMARK_DATA = {
           {
             "name": "write_to/908070605040302010",
             "value": 168,
+            "range": "± 5",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "committer": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "id": "6019a3c0683ef2b23d8db13752e37a2eac8be2ff",
+          "message": "Testing PR to test GH Actions CI for runtime perf benchmarking",
+          "timestamp": "2020-08-19T00:33:20Z",
+          "url": "https://github.com/echeran/icu4x/pull/4/commits/6019a3c0683ef2b23d8db13752e37a2eac8be2ff"
+        },
+        "date": 1598380384202,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "isize/smaller",
+            "value": 33035,
+            "range": "± 1013",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "isize/larger",
+            "value": 78506,
+            "range": "± 2403",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "to_string/908070605040302010",
+            "value": 279,
+            "range": "± 11",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "write_to/908070605040302010",
+            "value": 167,
             "range": "± 5",
             "unit": "ns/iter"
           }
