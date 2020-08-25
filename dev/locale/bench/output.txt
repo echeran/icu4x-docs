@@ -1,0 +1,34 @@
+Gnuplot not found, using plotters backend
+test langid/construct/langid ... bench:         760 ns/iter (+/- 39)
+test langid/construct/locale ... bench:        1231 ns/iter (+/- 40)
+
+test langid/to_string/langid ... bench:        2081 ns/iter (+/- 78)
+test langid/to_string/locale ... bench:        2018 ns/iter (+/- 90)
+
+test langid/compare/struct/langid ... bench:          17 ns/iter (+/- 0)
+test langid/compare/struct/locale ... bench:          17 ns/iter (+/- 0)
+test langid/compare/str/langid ... bench:        2329 ns/iter (+/- 55)
+test langid/compare/str/locale ... bench:        2334 ns/iter (+/- 82)
+
+test langid/canonicalize/langid ... bench:        3515 ns/iter (+/- 101)
+test langid/canonicalize/locale ... bench:        5282 ns/iter (+/- 209)
+
+Gnuplot not found, using plotters backend
+test locale/construct/locale ... bench:        2309 ns/iter (+/- 61)
+
+test locale/to_string/locale ... bench:        3076 ns/iter (+/- 143)
+
+test locale/compare/struct/locale ... bench:         121 ns/iter (+/- 3)
+test locale/compare/str/locale ... bench:        3128 ns/iter (+/- 171)
+
+test locale/canonicalize/locale ... bench:        6140 ns/iter (+/- 362)
+
+Gnuplot not found, using plotters backend
+test language_subtag_parse ... bench:         329 ns/iter (+/- 42)
+
+test script_subtag_parse ... bench:         109 ns/iter (+/- 5)
+
+test region_subtag_parse ... bench:         126 ns/iter (+/- 5)
+
+test variant_subtag_parse ... bench:         263 ns/iter (+/- 12)
+
