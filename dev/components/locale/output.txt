@@ -1,0 +1,20 @@
+Gnuplot not found, using plotters backend
+test isize/smaller ... bench:       34104 ns/iter (+/- 592)
+
+test isize/larger ... bench:       80303 ns/iter (+/- 1957)
+
+test to_string/22.50 ... bench:         104 ns/iter (+/- 2)
+test to_string/908070605040302010 ... bench:         329 ns/iter (+/- 5)
+
+test write_to/22.50 ... bench:          50 ns/iter (+/- 0)
+test write_to/908070605040302010 ... bench:         141 ns/iter (+/- 2)
+
+test from_string/0012.3400 ... bench:          45 ns/iter (+/- 0)
+test from_string/00.0012216734340 ... bench:         103 ns/iter (+/- 2)
+test from_string/00002342561123400.0 ... bench:         111 ns/iter (+/- 2)
+test from_string/-00123400 ... bench:          45 ns/iter (+/- 2)
+test from_string/922337203685477580898230948203840239384.9823094820384023938423424 ... bench:         326 ns/iter (+/- 54)
+test from_string/0.000000001 ... bench:          44 ns/iter (+/- 0)
+test from_string/1000000001 ... bench:          91 ns/iter (+/- 1)
+test from_string/0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000... ... bench:      105687 ns/iter (+/- 2000)
+
