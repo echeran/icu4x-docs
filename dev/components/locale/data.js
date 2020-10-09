@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1602215995305,
+  "lastUpdate": 1602220420193,
   "repoUrl": "https://github.com/echeran/icu4x",
   "entries": {
     "Rust Benchmark": [
@@ -299,6 +299,56 @@ window.BENCHMARK_DATA = {
             "name": "from_string/1000000001",
             "value": 85,
             "range": "± 8",
+            "unit": "ns/iter"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "committer": {
+            "name": "echeran",
+            "username": "echeran"
+          },
+          "id": "7ae8f77f3cd6b42b0c0cb654e13c496b4a5a65e4",
+          "message": "Test PR on personal fork - API docs/CI dashboard",
+          "timestamp": "2020-10-06T19:21:31Z",
+          "url": "https://github.com/echeran/icu4x/pull/10/commits/7ae8f77f3cd6b42b0c0cb654e13c496b4a5a65e4"
+        },
+        "date": 1602220418460,
+        "tool": "cargo",
+        "benches": [
+          {
+            "name": "isize/smaller",
+            "value": 29959,
+            "range": "± 1385",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "isize/larger",
+            "value": 68277,
+            "range": "± 3610",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "to_string/908070605040302010",
+            "value": 260,
+            "range": "± 16",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "write_to/908070605040302010",
+            "value": 119,
+            "range": "± 4",
+            "unit": "ns/iter"
+          },
+          {
+            "name": "from_string/1000000001",
+            "value": 79,
+            "range": "± 4",
             "unit": "ns/iter"
           }
         ]
