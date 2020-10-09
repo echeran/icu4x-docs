@@ -1,20 +1,20 @@
 Gnuplot not found, using plotters backend
-test isize/smaller ... bench:       33176 ns/iter (+/- 358)
+test isize/smaller ... bench:       32035 ns/iter (+/- 2595)
 
-test isize/larger ... bench:       78646 ns/iter (+/- 759)
+test isize/larger ... bench:       74739 ns/iter (+/- 4649)
 
-test to_string/22.50 ... bench:         103 ns/iter (+/- 1)
-test to_string/908070605040302010 ... bench:         297 ns/iter (+/- 4)
+test to_string/22.50 ... bench:          88 ns/iter (+/- 8)
+test to_string/908070605040302010 ... bench:         257 ns/iter (+/- 22)
 
-test write_to/22.50 ... bench:          49 ns/iter (+/- 0)
-test write_to/908070605040302010 ... bench:         140 ns/iter (+/- 0)
+test write_to/22.50 ... bench:          42 ns/iter (+/- 3)
+test write_to/908070605040302010 ... bench:         134 ns/iter (+/- 26)
 
-test from_string/0012.3400 ... bench:          45 ns/iter (+/- 0)
-test from_string/00.0012216734340 ... bench:         101 ns/iter (+/- 1)
-test from_string/00002342561123400.0 ... bench:         109 ns/iter (+/- 1)
-test from_string/-00123400 ... bench:          45 ns/iter (+/- 0)
-test from_string/922337203685477580898230948203840239384.9823094820384023938423424 ... bench:         325 ns/iter (+/- 2)
-test from_string/0.000000001 ... bench:          43 ns/iter (+/- 0)
-test from_string/1000000001 ... bench:          90 ns/iter (+/- 1)
-test from_string/0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000... ... bench:      104538 ns/iter (+/- 1068)
+test from_string/0012.3400 ... bench:          40 ns/iter (+/- 3)
+test from_string/00.0012216734340 ... bench:          94 ns/iter (+/- 10)
+test from_string/00002342561123400.0 ... bench:          98 ns/iter (+/- 5)
+test from_string/-00123400 ... bench:          42 ns/iter (+/- 4)
+test from_string/922337203685477580898230948203840239384.9823094820384023938423424 ... bench:         327 ns/iter (+/- 35)
+test from_string/0.000000001 ... bench:          34 ns/iter (+/- 2)
+test from_string/1000000001 ... bench:          83 ns/iter (+/- 9)
+test from_string/0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000... ... bench:       56828 ns/iter (+/- 4833)
 
