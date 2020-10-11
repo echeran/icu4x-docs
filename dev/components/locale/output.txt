@@ -1,34 +1,34 @@
 Gnuplot not found, using plotters backend
-test langid/construct/langid ... bench:         639 ns/iter (+/- 40)
-test langid/construct/locale ... bench:        1138 ns/iter (+/- 68)
+test langid/construct/langid ... bench:         632 ns/iter (+/- 41)
+test langid/construct/locale ... bench:        1111 ns/iter (+/- 178)
 
-test langid/to_string/langid ... bench:        2183 ns/iter (+/- 95)
-test langid/to_string/locale ... bench:        2237 ns/iter (+/- 181)
+test langid/to_string/langid ... bench:        2116 ns/iter (+/- 128)
+test langid/to_string/locale ... bench:        2124 ns/iter (+/- 654)
 
-test langid/compare/struct/langid ... bench:          16 ns/iter (+/- 1)
+test langid/compare/struct/langid ... bench:          15 ns/iter (+/- 0)
 test langid/compare/struct/locale ... bench:          16 ns/iter (+/- 1)
-test langid/compare/str/langid ... bench:        2337 ns/iter (+/- 115)
-test langid/compare/str/locale ... bench:        2332 ns/iter (+/- 142)
+test langid/compare/str/langid ... bench:        2462 ns/iter (+/- 80)
+test langid/compare/str/locale ... bench:        2310 ns/iter (+/- 150)
 
-test langid/canonicalize/langid ... bench:        3634 ns/iter (+/- 238)
-test langid/canonicalize/locale ... bench:        5645 ns/iter (+/- 314)
-
-Gnuplot not found, using plotters backend
-test locale/construct/locale ... bench:        2570 ns/iter (+/- 125)
-
-test locale/to_string/locale ... bench:        3391 ns/iter (+/- 203)
-
-test locale/compare/struct/locale ... bench:         119 ns/iter (+/- 5)
-test locale/compare/str/locale ... bench:        3587 ns/iter (+/- 254)
-
-test locale/canonicalize/locale ... bench:        7215 ns/iter (+/- 427)
+test langid/canonicalize/langid ... bench:        3366 ns/iter (+/- 150)
+test langid/canonicalize/locale ... bench:        5331 ns/iter (+/- 165)
 
 Gnuplot not found, using plotters backend
-test language_subtag_parse ... bench:         342 ns/iter (+/- 24)
+test locale/construct/locale ... bench:        2535 ns/iter (+/- 143)
 
-test script_subtag_parse ... bench:         129 ns/iter (+/- 16)
+test locale/to_string/locale ... bench:        3297 ns/iter (+/- 209)
 
-test region_subtag_parse ... bench:         125 ns/iter (+/- 9)
+test locale/compare/struct/locale ... bench:         116 ns/iter (+/- 8)
+test locale/compare/str/locale ... bench:        3533 ns/iter (+/- 541)
 
-test variant_subtag_parse ... bench:         280 ns/iter (+/- 20)
+test locale/canonicalize/locale ... bench:        7150 ns/iter (+/- 222)
+
+Gnuplot not found, using plotters backend
+test language_subtag_parse ... bench:         318 ns/iter (+/- 16)
+
+test script_subtag_parse ... bench:         123 ns/iter (+/- 4)
+
+test region_subtag_parse ... bench:         122 ns/iter (+/- 4)
+
+test variant_subtag_parse ... bench:         246 ns/iter (+/- 11)
 
