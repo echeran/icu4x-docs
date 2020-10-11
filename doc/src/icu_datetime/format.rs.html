@@ -201,7 +201,7 @@
 <span class="doccomment">/// ```</span>
 <span class="doccomment">/// # use icu_locale::LanguageIdentifier;</span>
 <span class="doccomment">/// # use icu_datetime::{DateTimeFormat, DateTimeFormatOptions};</span>
-<span class="doccomment">/// # use icu_datetime::DummyDateTime;</span>
+<span class="doccomment">/// # use icu_datetime::MockDateTime;</span>
 <span class="doccomment">/// # use icu_data_provider::InvariantDataProvider;</span>
 <span class="doccomment">/// # let langid: LanguageIdentifier = &quot;en&quot;.parse()</span>
 <span class="doccomment">/// #     .expect(&quot;Failed to parse a language identifier.&quot;);</span>
@@ -210,7 +210,7 @@
 <span class="doccomment">/// let dtf = DateTimeFormat::try_new(langid, &amp;provider, &amp;options)</span>
 <span class="doccomment">///     .expect(&quot;Failed to create DateTimeFormat instance.&quot;);</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// let date_time = DummyDateTime::try_new(2020, 9, 1, 12, 34, 28)</span>
+<span class="doccomment">/// let date_time = MockDateTime::try_new(2020, 9, 1, 12, 34, 28)</span>
 <span class="doccomment">///     .expect(&quot;Failed to construct DateTime.&quot;);</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// let formatted_date = dtf.format(&amp;date_time);</span>

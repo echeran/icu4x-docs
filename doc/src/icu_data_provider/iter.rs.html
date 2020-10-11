@@ -43,6 +43,14 @@
 <span id="43">43</span>
 <span id="44">44</span>
 <span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">error</span>::<span class="ident">Error</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
@@ -65,11 +73,16 @@
 
 <span class="doccomment">/// Trait for objects capable of persisting serialized data hunks.</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">DataExporter</span> {
+    <span class="doccomment">/// Save `obj` corresponding to `req`.</span>
     <span class="kw">fn</span> <span class="ident">put</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
         <span class="ident">req</span>: <span class="kw-2">&amp;</span><span class="ident">DataRequest</span>,
         <span class="ident">obj</span>: <span class="kw-2">&amp;</span><span class="kw">dyn</span> <span class="ident">erased_serde</span>::<span class="ident">Serialize</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">Box</span><span class="op">&lt;</span><span class="kw">dyn</span> <span class="ident">std</span>::<span class="ident">error</span>::<span class="ident">Error</span><span class="op">&gt;</span><span class="op">&gt;</span>;
+
+    <span class="doccomment">/// Whether to load and dump data for the given entry. This function enables the</span>
+    <span class="doccomment">/// DataExporter to filter out certain data entries.</span>
+    <span class="kw">fn</span> <span class="ident">includes</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">data_entry</span>: <span class="kw-2">&amp;</span><span class="ident">DataEntry</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">bool</span>;
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span>, <span class="ident">T</span><span class="op">&gt;</span> <span class="ident">IterableDataProvider</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">T</span>
@@ -78,9 +91,12 @@
 {
     <span class="kw">fn</span> <span class="ident">export_key</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">data_key</span>: <span class="kw-2">&amp;</span><span class="ident">DataKey</span>, <span class="ident">sink</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw">dyn</span> <span class="ident">DataExporter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="ident">Error</span><span class="op">&gt;</span> {
         <span class="kw">for</span> <span class="ident">data_entry</span> <span class="kw">in</span> <span class="self">self</span>.<span class="ident">iter_for_key</span>(<span class="ident">data_key</span>)<span class="question-mark">?</span> {
+            <span class="kw">if</span> <span class="op">!</span><span class="ident">sink</span>.<span class="ident">includes</span>(<span class="kw-2">&amp;</span><span class="ident">data_entry</span>) {
+                <span class="kw">continue</span>;
+            }
             <span class="kw">let</span> <span class="ident">req</span> <span class="op">=</span> <span class="ident">DataRequest</span> {
                 <span class="ident">data_key</span>: <span class="kw-2">*</span><span class="ident">data_key</span>,
-                <span class="ident">data_entry</span>: <span class="ident">data_entry</span>.<span class="ident">clone</span>(),
+                <span class="ident">data_entry</span>,
             };
             <span class="kw">let</span> <span class="ident">response</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">load</span>(<span class="kw-2">&amp;</span><span class="ident">req</span>)<span class="question-mark">?</span>;
             <span class="kw">let</span> <span class="ident">payload</span> <span class="op">=</span> <span class="ident">response</span>.<span class="ident">borrow_as_serialize</span>();

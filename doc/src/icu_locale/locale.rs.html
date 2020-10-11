@@ -169,6 +169,12 @@
 <span id="169">169</span>
 <span id="170">170</span>
 <span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">parser</span>::{<span class="ident">parse_locale</span>, <span class="ident">ParserError</span>};
 <span class="kw">use</span> <span class="kw">crate</span>::{<span class="ident">extensions</span>, <span class="ident">subtags</span>, <span class="ident">LanguageIdentifier</span>};
@@ -235,7 +241,7 @@
 <span class="doccomment">/// assert_eq!(loc.variants.get(0).unwrap(), &quot;valencia&quot;);</span>
 <span class="doccomment">/// ```</span>
 <span class="doccomment">/// [`Unicode Locale Identifier`]: https://unicode.org/reports/tr35/tr35.html#Unicode_locale_identifier</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Default</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>, <span class="ident">PartialOrd</span>, <span class="ident">Ord</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Default</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>, <span class="ident">Clone</span>, <span class="ident">Hash</span>, <span class="ident">PartialOrd</span>, <span class="ident">Ord</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Locale</span> {
     <span class="doccomment">/// Language subtag of the Locale</span>
     <span class="kw">pub</span> <span class="ident">language</span>: <span class="ident">subtags</span>::<span class="ident">Language</span>,
@@ -313,6 +319,12 @@
             <span class="ident">region</span>: <span class="ident">loc</span>.<span class="ident">region</span>,
             <span class="ident">variants</span>: <span class="ident">loc</span>.<span class="ident">variants</span>,
         }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">Locale</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
+        <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Display</span>::<span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>)
     }
 }
 

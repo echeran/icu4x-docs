@@ -20,7 +20,7 @@ numbers may require different versions of the same message, then the numbers hav
 
 <span class="kw">let</span> <span class="ident">dp</span> <span class="op">=</span> <span class="ident">InvariantDataProvider</span>;
 
-<span class="kw">let</span> <span class="ident">pr</span> <span class="op">=</span> <span class="ident">PluralRules</span>::<span class="ident">try_new</span>(<span class="ident">lang</span>, <span class="ident">PluralRuleType</span>::<span class="ident">Cardinal</span>, <span class="kw-2">&amp;</span><span class="ident">dp</span>)
+<span class="kw">let</span> <span class="ident">pr</span> <span class="op">=</span> <span class="ident">PluralRules</span>::<span class="ident">try_new</span>(<span class="ident">lang</span>, <span class="kw-2">&amp;</span><span class="ident">dp</span>, <span class="ident">PluralRuleType</span>::<span class="ident">Cardinal</span>)
     .<span class="ident">expect</span>(<span class="string">&quot;Failed to construct a PluralRules struct.&quot;</span>);
 
 <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pr</span>.<span class="ident">select</span>(<span class="number">5_usize</span>), <span class="ident">PluralCategory</span>::<span class="ident">Other</span>);</pre></div>
