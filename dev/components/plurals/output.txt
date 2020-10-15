@@ -1,0 +1,9 @@
+Gnuplot not found, using plotters backend
+test plurals/operands/overview ... bench:        1297 ns/iter (+/- 81)
+
+Gnuplot not found, using plotters backend
+test plurals/parser/overview ... bench:        6734 ns/iter (+/- 365)
+
+Gnuplot not found, using plotters backend
+test plurals/pluralrules/overview ... bench:      124679 ns/iter (+/- 10786)
+
