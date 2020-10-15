@@ -36,10 +36,17 @@
 <span id="36">36</span>
 <span id="37">37</span>
 <span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
 </pre><div class="example-wrap"><pre class="rust ">
-<span class="doccomment">//! `icu-testdata` is a unit testing package for [`ICU4X`].</span>
+<span class="comment">// This file is part of ICU4X. For terms of use, please see the file</span>
+<span class="comment">// called LICENSE at the top level of the ICU4X source tree</span>
+<span class="comment">// (online at: https://github.com/unicode-org/icu4x/blob/master/LICENSE ).</span>
+<span class="doccomment">//! `icu_testdata` is a unit testing package for [`ICU4X`].</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! The package exposes a DataProvider with stable data useful for unit testing. The data is</span>
+<span class="doccomment">//! The package exposes a `DataProvider` with stable data useful for unit testing. The data is</span>
 <span class="doccomment">//! based on a CLDR tag and a short list of locales that, together, cover a range of scenarios.</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! See README.md for instructions on re-generating the data from CLDR.</span>
@@ -48,15 +55,16 @@
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ```</span>
 <span class="doccomment">//! use std::borrow::Cow;</span>
-<span class="doccomment">//! use icu_data_provider::prelude::*;</span>
-<span class="doccomment">//! use icu_data_provider::structs::plurals::PluralRuleStringsV1;</span>
+<span class="doccomment">//! use icu_provider::prelude::*;</span>
+<span class="doccomment">//! use icu_provider::structs::plurals::PluralRuleStringsV1;</span>
+<span class="doccomment">//! use icu_locid_macros::langid;</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! let data_provider = icu_testdata::get_provider();</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! let data: Cow&lt;PluralRuleStringsV1&gt; = data_provider</span>
 <span class="doccomment">//!     .load(&amp;DataRequest {</span>
 <span class="doccomment">//!         data_entry: DataEntry {</span>
-<span class="doccomment">//!             langid: &quot;be&quot;.parse().unwrap(),</span>
+<span class="doccomment">//!             langid: langid!(&quot;be&quot;),</span>
 <span class="doccomment">//!             variant: None,</span>
 <span class="doccomment">//!         },</span>
 <span class="doccomment">//!         data_key: icu_data_key!(plurals: cardinal@1),</span>
@@ -67,7 +75,7 @@
 <span class="doccomment">//! assert_eq!(data.few, Some(Cow::Borrowed(&quot;n % 10 = 2..4 and n % 100 != 12..14&quot;)));</span>
 <span class="doccomment">//! ```</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! [`ICU4X`]: https://github.com/unicode-org/icu4x</span>
+<span class="doccomment">//! [`ICU4X`]: ../icu/index.html</span>
 
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;metadata&quot;</span>)]</span>
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">metadata</span>;

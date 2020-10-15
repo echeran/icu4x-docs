@@ -1,0 +1,4 @@
+Gnuplot not found, using plotters backend
+test langid/overview ... bench:        5654 ns/iter (+/- 248)
+
+Gnuplot not found, using plotters backend

@@ -196,13 +196,19 @@
 <span id="196">196</span>
 <span id="197">197</span>
 <span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
 </pre><div class="example-wrap"><pre class="rust ">
+<span class="comment">// This file is part of ICU4X. For terms of use, please see the file</span>
+<span class="comment">// called LICENSE at the top level of the ICU4X source tree</span>
+<span class="comment">// (online at: https://github.com/unicode-org/icu4x/blob/master/LICENSE ).</span>
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">date</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">error</span>::<span class="ident">DateTimeFormatError</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">fields</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">options</span>::{<span class="ident">style</span>, <span class="ident">DateTimeFormatOptions</span>};
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">pattern</span>::<span class="ident">Pattern</span>;
-<span class="kw">use</span> <span class="ident">icu_data_provider</span>::<span class="ident">structs</span>;
+<span class="kw">use</span> <span class="ident">icu_provider</span>::<span class="ident">structs</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">borrow</span>::<span class="ident">Cow</span>;
 
 <span class="kw">type</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">std</span>::<span class="ident">result</span>::<span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">T</span>, <span class="ident">DateTimeFormatError</span><span class="op">&gt;</span>;
