@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `components/locid/src/extensions/private/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../../dark.css"><link rel="stylesheet" type="text/css" href="../../../../light.css" id="themeStyle"><script src="../../../../storage.js"></script><noscript><link rel="stylesheet" href="../../../../noscript.css"></noscript><link rel="shortcut icon" href="../../../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../../../icu_locid/index.html'><div class='logo-container'><img src='../../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../../../settings.html"><img src="../../../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">  1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `components/locid/src/extensions/private/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="stylesheet" type="text/css" href="../../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../../../ayu.css" disabled ><script id="default-settings"></script><script src="../../../../storage.js"></script><noscript><link rel="stylesheet" href="../../../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../../../icu_locid/index.html'><div class='logo-container rust-logo'><img src='../../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><span class="help-button">?</span>
+                <a id="settings-menu" href="../../../../settings.html"><img src="../../../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">  1</span>
 <span id="2">  2</span>
 <span id="3">  3</span>
 <span id="4">  4</span>
@@ -136,6 +139,43 @@
 <span id="136">136</span>
 <span id="137">137</span>
 <span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="comment">// This file is part of ICU4X. For terms of use, please see the file</span>
 <span class="comment">// called LICENSE at the top level of the ICU4X source tree</span>
@@ -165,8 +205,7 @@
 <span class="doccomment">//! assert_eq!(loc.to_string(), &quot;en-US&quot;);</span>
 <span class="doccomment">//! ```</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! [`Private`]: ./struct.Private.html</span>
-<span class="doccomment">//! [`Keys`]: ./struct.Key.html</span>
+<span class="doccomment">//! [`Keys`]: Key</span>
 <span class="kw">mod</span> <span class="ident">key</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">ops</span>::<span class="ident">Deref</span>;
 
@@ -197,9 +236,23 @@
 <span class="doccomment">/// [`Private Use Extensions`]: https://unicode.org/reports/tr35/#pu_extensions</span>
 <span class="doccomment">/// [`Unicode Locale Identifier`]: https://unicode.org/reports/tr35/#Unicode_locale_identifier</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>, <span class="ident">Debug</span>, <span class="ident">Default</span>, <span class="ident">Hash</span>, <span class="ident">PartialOrd</span>, <span class="ident">Ord</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Private</span>(<span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">Key</span>]<span class="op">&gt;</span>);
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Private</span>(<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">Key</span>]<span class="op">&gt;</span><span class="op">&gt;</span>);
 
 <span class="kw">impl</span> <span class="ident">Private</span> {
+    <span class="doccomment">/// Returns a new empty list of private-use extensions. Same as `Default`, but is `const`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Example</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// ```</span>
+    <span class="doccomment">/// use icu_locid::extensions::private::Private;</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// assert_eq!(Private::new(), Private::default());</span>
+    <span class="doccomment">/// ```</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span>(<span class="prelude-val">None</span>)
+    }
+
     <span class="doccomment">/// A constructor which takes a pre-sorted list of `Key`.</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Examples</span>
@@ -215,8 +268,12 @@
     <span class="doccomment">/// let private = Private::from_vec_unchecked(vec![key1, key2]);</span>
     <span class="doccomment">/// assert_eq!(&amp;private.to_string(), &quot;-x-foo-bar&quot;);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_vec_unchecked</span>(<span class="ident">v</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Key</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
-        <span class="self">Self</span>(<span class="ident">v</span>.<span class="ident">into_boxed_slice</span>())
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_vec_unchecked</span>(<span class="ident">input</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Key</span><span class="op">&gt;</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="self">Self</span> {
+        <span class="kw">if</span> <span class="ident">input</span>.<span class="ident">is_empty</span>() {
+            <span class="self">Self</span>(<span class="prelude-val">None</span>)
+        } <span class="kw">else</span> {
+            <span class="self">Self</span>(<span class="prelude-val">Some</span>(<span class="ident">input</span>.<span class="ident">into_boxed_slice</span>()))
+        }
     }
 
     <span class="doccomment">/// Empties the `Private` list.</span>
@@ -239,7 +296,7 @@
     <span class="doccomment">/// assert_eq!(&amp;private.to_string(), &quot;&quot;);</span>
     <span class="doccomment">/// ```</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clear</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) {
-        <span class="self">self</span>.<span class="number">0</span> <span class="op">=</span> <span class="ident">Box</span>::<span class="ident">new</span>([]);
+        <span class="self">self</span>.<span class="number">0</span> <span class="op">=</span> <span class="prelude-val">None</span>;
     }
 
     <span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">fn</span> <span class="ident">try_from_iter</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span>(
@@ -249,22 +306,38 @@
             .<span class="ident">map</span>(<span class="op">|</span><span class="ident">subtag</span><span class="op">|</span> <span class="ident">Key</span>::<span class="ident">from_bytes</span>(<span class="ident">subtag</span>))
             .<span class="ident">collect</span>::<span class="op">&lt;</span><span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="kw">_</span><span class="op">&gt;</span>, <span class="kw">_</span><span class="op">&gt;</span><span class="op">&gt;</span>()<span class="question-mark">?</span>;
 
-        <span class="prelude-val">Ok</span>(<span class="self">Self</span>(<span class="ident">keys</span>.<span class="ident">into_boxed_slice</span>()))
+        <span class="prelude-val">Ok</span>(<span class="self">Self</span>::<span class="ident">from_vec_unchecked</span>(<span class="ident">keys</span>))
     }
 }
 
 <span class="kw">impl</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Display</span> <span class="kw">for</span> <span class="ident">Private</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
+        <span class="ident">writeable</span>::<span class="ident">Writeable</span>::<span class="ident">write_to</span>(<span class="self">self</span>, <span class="ident">f</span>)
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">writeable</span>::<span class="ident">Writeable</span> <span class="kw">for</span> <span class="ident">Private</span> {
+    <span class="kw">fn</span> <span class="ident">write_to</span><span class="op">&lt;</span><span class="ident">W</span>: <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Write</span> <span class="op">+</span> <span class="question-mark">?</span><span class="ident">Sized</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">sink</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">W</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
         <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_empty</span>() {
             <span class="kw">return</span> <span class="prelude-val">Ok</span>(());
         }
-
-        <span class="ident">f</span>.<span class="ident">write_str</span>(<span class="string">&quot;-x&quot;</span>)<span class="question-mark">?</span>;
-
+        <span class="ident">sink</span>.<span class="ident">write_str</span>(<span class="string">&quot;-x&quot;</span>)<span class="question-mark">?</span>;
         <span class="kw">for</span> <span class="ident">key</span> <span class="kw">in</span> <span class="self">self</span>.<span class="ident">iter</span>() {
-            <span class="macro">write</span><span class="macro">!</span>(<span class="ident">f</span>, <span class="string">&quot;-{}&quot;</span>, <span class="ident">key</span>)<span class="question-mark">?</span>;
+            <span class="ident">sink</span>.<span class="ident">write_char</span>(<span class="string">&#39;-&#39;</span>)<span class="question-mark">?</span>;
+            <span class="ident">writeable</span>::<span class="ident">Writeable</span>::<span class="ident">write_to</span>(<span class="ident">key</span>, <span class="ident">sink</span>)<span class="question-mark">?</span>;
         }
         <span class="prelude-val">Ok</span>(())
+    }
+
+    <span class="kw">fn</span> <span class="ident">write_len</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">writeable</span>::<span class="ident">LengthHint</span> {
+        <span class="kw">if</span> <span class="self">self</span>.<span class="ident">is_empty</span>() {
+            <span class="kw">return</span> <span class="ident">writeable</span>::<span class="ident">LengthHint</span>::<span class="ident">Exact</span>(<span class="number">0</span>);
+        }
+        <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">result</span> <span class="op">=</span> <span class="ident">writeable</span>::<span class="ident">LengthHint</span>::<span class="ident">Exact</span>(<span class="number">2</span>);
+        <span class="kw">for</span> <span class="ident">key</span> <span class="kw">in</span> <span class="self">self</span>.<span class="ident">iter</span>() {
+            <span class="ident">result</span> <span class="op">+</span><span class="op">=</span> <span class="ident">writeable</span>::<span class="ident">Writeable</span>::<span class="ident">write_len</span>(<span class="ident">key</span>) <span class="op">+</span> <span class="number">1</span>;
+        }
+        <span class="ident">result</span>
     }
 }
 
@@ -272,7 +345,11 @@
     <span class="kw">type</span> <span class="ident">Target</span> <span class="op">=</span> [<span class="ident">Key</span>];
 
     <span class="kw">fn</span> <span class="ident">deref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="kw-2">&amp;</span><span class="self">Self</span>::<span class="ident">Target</span> {
-        <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>
+        <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">ref</span> <span class="ident">data</span>) <span class="op">=</span> <span class="self">self</span>.<span class="number">0</span> {
+            <span class="ident">data</span>
+        } <span class="kw">else</span> {
+            <span class="kw-2">&amp;</span>[]
+        }
     }
 }
 </pre></div>

@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `components/provider_fs/src/export/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../dark.css"><link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle"><script src="../../../storage.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="shortcut icon" href="../../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../../icu_provider_fs/index.html'><div class='logo-container'><img src='../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../../settings.html"><img src="../../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `components/provider_fs/src/export/mod.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>mod.rs - source</title><link rel="stylesheet" type="text/css" href="../../../normalize.css"><link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../../ayu.css" disabled ><script id="default-settings"></script><script src="../../../storage.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../../icu_provider_fs/index.html'><div class='logo-container rust-logo'><img src='../../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><span class="help-button">?</span>
+                <a id="settings-menu" href="../../../settings.html"><img src="../../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
 <span id="2"> 2</span>
 <span id="3"> 3</span>
 <span id="4"> 4</span>
@@ -65,6 +68,9 @@
 <span id="65">65</span>
 <span id="66">66</span>
 <span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="comment">// This file is part of ICU4X. For terms of use, please see the file</span>
 <span class="comment">// called LICENSE at the top level of the ICU4X source tree</span>
@@ -77,56 +83,59 @@
 <span class="doccomment">//! # Examples</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ```</span>
+<span class="doccomment">//! use icu_locid_macros::langid;</span>
 <span class="doccomment">//! use icu_provider::prelude::*;</span>
-<span class="doccomment">//! use icu_provider::InvariantDataProvider;</span>
-<span class="doccomment">//! use icu_provider::structs::plurals::PluralRuleStringsV1;</span>
-<span class="doccomment">//! use icu_provider::iter::IterableDataProvider;</span>
+<span class="doccomment">//! use icu_provider::hello_world::{key, HelloWorldProvider, HelloWorldV1};</span>
+<span class="doccomment">//! use icu_provider::iter::DataExporter;</span>
 <span class="doccomment">//! use icu_provider_fs::FsDataProvider;</span>
 <span class="doccomment">//! use icu_provider_fs::export::fs_exporter;</span>
 <span class="doccomment">//! use icu_provider_fs::export::serializers;</span>
+<span class="doccomment">//! use std::borrow::Cow;</span>
 <span class="doccomment">//! use std::path::PathBuf;</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! let DEMO_PATH = std::env::temp_dir().join(&quot;icu4x_json_demo&quot;);</span>
-<span class="doccomment">//! let DATA_KEY = icu_data_key!(plurals: cardinal@1);</span>
+<span class="doccomment">//! let demo_path = std::env::temp_dir().join(&quot;icu4x_json_demo&quot;);</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! // Set up the exporter</span>
 <span class="doccomment">//! let mut options = serializers::json::Options::default();</span>
 <span class="doccomment">//! let serializer = Box::new(serializers::json::Serializer::new(options));</span>
 <span class="doccomment">//! let mut options = fs_exporter::ExporterOptions::default();</span>
-<span class="doccomment">//! options.root = DEMO_PATH.clone();</span>
+<span class="doccomment">//! options.root = demo_path.clone();</span>
 <span class="doccomment">//! let mut exporter = fs_exporter::FilesystemExporter::try_new(serializer, options)</span>
 <span class="doccomment">//!     .expect(&quot;Should successfully initialize data output directory&quot;);</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! // Export a key</span>
-<span class="doccomment">//! let inv_provider = InvariantDataProvider;</span>
-<span class="doccomment">//! let result = inv_provider.export_key(&amp;DATA_KEY, &amp;mut exporter);</span>
+<span class="doccomment">//! let source_provider = HelloWorldProvider::new_with_placeholder_data();</span>
+<span class="doccomment">//! let result = exporter.put_key_from_provider(&amp;key::HELLO_WORLD_V1, &amp;source_provider);</span>
 <span class="doccomment">//! // Ensure flush() is called, even when the result is an error</span>
 <span class="doccomment">//! exporter.flush().expect(&quot;Should successfully flush&quot;);</span>
 <span class="doccomment">//! result.expect(&quot;Should successfully export&quot;);</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! // Create a filesystem provider reading from the demo directory</span>
-<span class="doccomment">//! let fs_provider = FsDataProvider::try_new(DEMO_PATH.clone())</span>
+<span class="doccomment">//! let fs_provider = FsDataProvider::try_new(demo_path.clone())</span>
 <span class="doccomment">//!     .expect(&quot;Should successfully read from filesystem&quot;);</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! // Read the key from the filesystem and ensure it is as expected</span>
 <span class="doccomment">//! let req = DataRequest {</span>
-<span class="doccomment">//!     data_key: DATA_KEY,</span>
-<span class="doccomment">//!     data_entry: DataEntry {</span>
-<span class="doccomment">//!         variant: None,</span>
-<span class="doccomment">//!         langid: Default::default(),</span>
+<span class="doccomment">//!     resource_path: ResourcePath {</span>
+<span class="doccomment">//!         key: key::HELLO_WORLD_V1,</span>
+<span class="doccomment">//!         options: ResourceOptions {</span>
+<span class="doccomment">//!             variant: None,</span>
+<span class="doccomment">//!             langid: Some(langid!(&quot;bn&quot;)),</span>
+<span class="doccomment">//!         },</span>
 <span class="doccomment">//!     }</span>
 <span class="doccomment">//! };</span>
-<span class="doccomment">//! let inv_response = inv_provider.load(&amp;req).unwrap();</span>
-<span class="doccomment">//! let fs_response = fs_provider.load(&amp;req)</span>
-<span class="doccomment">//!     .expect(&quot;Should successfully read from filesystem&quot;);</span>
+<span class="doccomment">//! let source_response: DataResponse&lt;HelloWorldV1&gt; =</span>
+<span class="doccomment">//!     source_provider.load_payload(&amp;req).unwrap();</span>
+<span class="doccomment">//! let fs_response: DataResponse&lt;HelloWorldV1&gt; =</span>
+<span class="doccomment">//!     fs_provider.load_payload(&amp;req).unwrap();</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! assert_eq!(</span>
-<span class="doccomment">//!     inv_response.borrow_payload::&lt;PluralRuleStringsV1&gt;().unwrap(),</span>
-<span class="doccomment">//!     fs_response.borrow_payload::&lt;PluralRuleStringsV1&gt;().unwrap(),</span>
+<span class="doccomment">//!     source_response.payload,</span>
+<span class="doccomment">//!     fs_response.payload,</span>
 <span class="doccomment">//! );</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! // Clean up from demo</span>
-<span class="doccomment">//! std::fs::remove_dir_all(&amp;DEMO_PATH).expect(&quot;Should clean up test directory&quot;);</span>
+<span class="doccomment">//! std::fs::remove_dir_all(&amp;demo_path).expect(&quot;Should clean up test directory&quot;);</span>
 <span class="doccomment">//! ```</span>
 
 <span class="kw">mod</span> <span class="ident">aliasing</span>;

@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `components/plurals/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="shortcut icon" href="../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../icu_plurals/index.html'><div class='logo-container'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">  1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `components/plurals/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings"></script><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../icu_plurals/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><span class="help-button">?</span>
+                <a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">  1</span>
 <span id="2">  2</span>
 <span id="3">  3</span>
 <span id="4">  4</span>
@@ -358,16 +361,6 @@
 <span id="358">358</span>
 <span id="359">359</span>
 <span id="360">360</span>
-<span id="361">361</span>
-<span id="362">362</span>
-<span id="363">363</span>
-<span id="364">364</span>
-<span id="365">365</span>
-<span id="366">366</span>
-<span id="367">367</span>
-<span id="368">368</span>
-<span id="369">369</span>
-<span id="370">370</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="comment">// This file is part of ICU4X. For terms of use, please see the file</span>
 <span class="comment">// called LICENSE at the top level of the ICU4X source tree</span>
@@ -394,6 +387,7 @@
 <span class="doccomment">//! # Examples</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ```</span>
+<span class="doccomment">//! # #[cfg(feature = &quot;provider_serde&quot;)] {</span>
 <span class="doccomment">//! use icu_locid_macros::langid;</span>
 <span class="doccomment">//! use icu_plurals::{PluralRules, PluralRuleType, PluralCategory};</span>
 <span class="doccomment">//!</span>
@@ -405,6 +399,7 @@
 <span class="doccomment">//!     .expect(&quot;Failed to construct a PluralRules struct.&quot;);</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! assert_eq!(pr.select(5_usize), PluralCategory::Other);</span>
+<span class="doccomment">//! # } // feature = &quot;provider_serde&quot;</span>
 <span class="doccomment">//! ```</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ## Plural Rules</span>
@@ -417,51 +412,37 @@
 <span class="doccomment">//! Every number in every language belongs to a certain [`Plural Category`].</span>
 <span class="doccomment">//! For example, Polish language uses four:</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! * [`One`](./enum.PluralCategory.html#variant.One): `1 miesiąc`</span>
-<span class="doccomment">//! * [`Few`](./enum.PluralCategory.html#variant.Few): `2 miesiące`</span>
-<span class="doccomment">//! * [`Many`](./enum.PluralCategory.html#variant.Many): `5 miesięcy`</span>
-<span class="doccomment">//! * [`Other`](./enum.PluralCategory.html#variant.Other): `1.5 miesiąca`</span>
+<span class="doccomment">//! * [`One`](PluralCategory::One): `1 miesiąc`</span>
+<span class="doccomment">//! * [`Few`](PluralCategory::Few): `2 miesiące`</span>
+<span class="doccomment">//! * [`Many`](PluralCategory::Many): `5 miesięcy`</span>
+<span class="doccomment">//! * [`Other`](PluralCategory::Other): `1.5 miesiąca`</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ## Plural Rule Type</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Plural rules depend on the use case. This crate supports two types of plural rules:</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! * [`Cardinal`](./enum.PluralRuleType.html#variant.Cardinal): `3 doors`, `1 month`, `10 dollars`</span>
-<span class="doccomment">//! * [`Ordinal`](./enum.PluralRuleType.html#variant.Ordinal): `1st place`, `10th day`, `11th floor`</span>
-<span class="doccomment">//!</span>
-<span class="doccomment">//! ## Data Provider</span>
-<span class="doccomment">//!</span>
-<span class="doccomment">//! In order to function, the API requires data from [`CLDR`].</span>
-<span class="doccomment">//!</span>
-<span class="doccomment">//! [`ICU4X`] is going to use a special API for handling data management called `DataProvider`.</span>
-<span class="doccomment">//! Until that happens, this crate will provide a simple `JSON` and `bincode` providers behind a</span>
-<span class="doccomment">//! flag.</span>
-<span class="doccomment">//! For tests and documentation examples, there is also a `DummyDataProvider`.</span>
-<span class="doccomment">//!</span>
-<span class="doccomment">//! All of the content of the [`data`] module is heavily experimental and subject to change.</span>
+<span class="doccomment">//! * [`Cardinal`](PluralRuleType::Cardinal): `3 doors`, `1 month`, `10 dollars`</span>
+<span class="doccomment">//! * [`Ordinal`](PluralRuleType::Ordinal): `1st place`, `10th day`, `11th floor`</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! [`ICU4X`]: ../icu/index.html</span>
-<span class="doccomment">//! [`PluralRules`]: ./struct.PluralRules.html</span>
-<span class="doccomment">//! [`Plural Type`]: ./enum.PluralRuleType.html</span>
-<span class="doccomment">//! [`Plural Category`]: ./enum.PluralCategory.html</span>
+<span class="doccomment">//! [`Plural Type`]: PluralRuleType</span>
+<span class="doccomment">//! [`Plural Category`]: PluralCategory</span>
 <span class="doccomment">//! [`Language Plural Rules`]: https://unicode.org/reports/tr35/tr35-numbers.html#Language_Plural_Rules</span>
 <span class="doccomment">//! [`CLDR`]: http://cldr.unicode.org/</span>
-<span class="doccomment">//! [`data`]: ./data/index.html</span>
 <span class="kw">mod</span> <span class="ident">data</span>;
 <span class="kw">mod</span> <span class="ident">error</span>;
 <span class="kw">mod</span> <span class="ident">operands</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">provider</span>;
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">rules</span>;
 
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">error</span>::<span class="ident">PluralRulesError</span>;
 <span class="kw">use</span> <span class="ident">icu_locid</span>::<span class="ident">LanguageIdentifier</span>;
-<span class="kw">use</span> <span class="ident">icu_provider</span>::{<span class="ident">icu_data_key</span>, <span class="ident">structs</span>, <span class="ident">DataEntry</span>, <span class="ident">DataProvider</span>, <span class="ident">DataRequest</span>};
+<span class="kw">use</span> <span class="ident">icu_provider</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">operands</span>::<span class="ident">PluralOperands</span>;
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">borrow</span>::<span class="ident">Cow</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">convert</span>::<span class="ident">TryInto</span>;
 
 <span class="doccomment">/// A type of a plural rule which can be associated with the [`PluralRules`] struct.</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// [`PluralRules`]: ./struct.PluralRules.html</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>, <span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Hash</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">PluralRuleType</span> {
     <span class="doccomment">/// Cardinal plural forms express quantities of units such as time, currency or distance,</span>
@@ -472,8 +453,8 @@
     <span class="doccomment">/// * [`One`]: `1 day`</span>
     <span class="doccomment">/// * [`Other`]: `0 days`, `2 days`, `10 days`, `0.3 days`</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// [`One`]: ./enum.PluralCategory.html#variant.One</span>
-    <span class="doccomment">/// [`Other`]: ./enum.PluralCategory.html#variant.Other</span>
+    <span class="doccomment">/// [`One`]: PluralCategory::One</span>
+    <span class="doccomment">/// [`Other`]: PluralCategory::Other</span>
     <span class="ident">Cardinal</span>,
     <span class="doccomment">/// Ordinal plural forms denote the order of items in a set and are always integers.</span>
     <span class="doccomment">///</span>
@@ -484,10 +465,10 @@
     <span class="doccomment">/// * [`Few`]: `3rd floor`, `23rd floor`, `103rd floor`</span>
     <span class="doccomment">/// * [`Other`]: `4th floor`, `11th floor`, `96th floor`</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// [`One`]: ./enum.PluralCategory.html#variant.One</span>
-    <span class="doccomment">/// [`Two`]: ./enum.PluralCategory.html#variant.Two</span>
-    <span class="doccomment">/// [`Few`]: ./enum.PluralCategory.html#variant.Few</span>
-    <span class="doccomment">/// [`Other`]: ./enum.PluralCategory.html#variant.Other</span>
+    <span class="doccomment">/// [`One`]: PluralCategory::One</span>
+    <span class="doccomment">/// [`Two`]: PluralCategory::Two</span>
+    <span class="doccomment">/// [`Few`]: PluralCategory::Few</span>
+    <span class="doccomment">/// [`Other`]: PluralCategory::Other</span>
     <span class="ident">Ordinal</span>,
 }
 
@@ -503,7 +484,7 @@
 <span class="doccomment">/// ```</span>
 <span class="doccomment">/// use icu_locid_macros::langid;</span>
 <span class="doccomment">/// use icu_plurals::{PluralRules, PluralRuleType, PluralCategory};</span>
-<span class="doccomment">/// use icu_provider::InvariantDataProvider;</span>
+<span class="doccomment">/// use icu_provider::inv::InvariantDataProvider;</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// let lid = langid!(&quot;en&quot;);</span>
 <span class="doccomment">///</span>
@@ -610,7 +591,7 @@
 <span class="doccomment">/// ```</span>
 <span class="doccomment">/// use icu_locid_macros::langid;</span>
 <span class="doccomment">/// use icu_plurals::{PluralRules, PluralRuleType, PluralCategory};</span>
-<span class="doccomment">/// use icu_provider::InvariantDataProvider;</span>
+<span class="doccomment">/// use icu_provider::inv::InvariantDataProvider;</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// let lid = langid!(&quot;en&quot;);</span>
 <span class="doccomment">///</span>
@@ -623,9 +604,8 @@
 <span class="doccomment">/// ```</span>
 <span class="doccomment">///</span>
 <span class="doccomment">/// [`ICU4X`]: ../icu/index.html</span>
-<span class="doccomment">/// [`PluralRules`]: ./struct.PluralRules.html</span>
-<span class="doccomment">/// [`Plural Type`]: ./enum.PluralRuleType.html</span>
-<span class="doccomment">/// [`Plural Category`]: ./enum.PluralCategory.html</span>
+<span class="doccomment">/// [`Plural Type`]: PluralRuleType</span>
+<span class="doccomment">/// [`Plural Category`]: PluralCategory</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PluralRules</span> {
     <span class="ident">_langid</span>: <span class="ident">LanguageIdentifier</span>,
     <span class="ident">selector</span>: <span class="ident">data</span>::<span class="ident">RulesSelector</span>,
@@ -641,7 +621,7 @@
     <span class="doccomment">/// ```</span>
     <span class="doccomment">/// use icu_locid_macros::langid;</span>
     <span class="doccomment">/// use icu_plurals::{PluralRules, PluralRuleType};</span>
-    <span class="doccomment">/// use icu_provider::InvariantDataProvider;</span>
+    <span class="doccomment">/// use icu_provider::inv::InvariantDataProvider;</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// let lid = langid!(&quot;en&quot;);</span>
     <span class="doccomment">///</span>
@@ -650,25 +630,28 @@
     <span class="doccomment">/// let _ = PluralRules::try_new(lid, &amp;dp, PluralRuleType::Cardinal);</span>
     <span class="doccomment">/// ```</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// [`type`]: ./enum.PluralRuleType.html</span>
-    <span class="doccomment">/// [`data provider`]: ./data/trait.DataProviderType.html</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">try_new</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span>, <span class="ident">D</span>: <span class="ident">DataProvider</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span><span class="op">&gt;</span><span class="op">&gt;</span>(
+    <span class="doccomment">/// [`type`]: PluralRuleType</span>
+    <span class="doccomment">/// [`data provider`]: icu_provider::DataProvider</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">try_new</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span>, <span class="ident">D</span>: <span class="ident">DataProvider</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span>, <span class="ident">provider</span>::<span class="ident">PluralRuleStringsV1</span><span class="op">&lt;</span><span class="lifetime">&#39;d</span><span class="op">&gt;</span><span class="op">&gt;</span> <span class="op">+</span> <span class="question-mark">?</span><span class="ident">Sized</span><span class="op">&gt;</span>(
         <span class="ident">langid</span>: <span class="ident">LanguageIdentifier</span>,
         <span class="ident">data_provider</span>: <span class="kw-2">&amp;</span><span class="ident">D</span>,
         <span class="ident">type_</span>: <span class="ident">PluralRuleType</span>,
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="self">Self</span>, <span class="ident">PluralRulesError</span><span class="op">&gt;</span> {
-        <span class="kw">let</span> <span class="ident">data_key</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">type_</span> {
-            <span class="ident">PluralRuleType</span>::<span class="ident">Cardinal</span> <span class="op">=</span><span class="op">&gt;</span> <span class="macro">icu_data_key</span><span class="macro">!</span>(<span class="ident">plurals</span>: <span class="ident">cardinal</span>@<span class="number">1</span>),
-            <span class="ident">PluralRuleType</span>::<span class="ident">Ordinal</span> <span class="op">=</span><span class="op">&gt;</span> <span class="macro">icu_data_key</span><span class="macro">!</span>(<span class="ident">plurals</span>: <span class="ident">ordinal</span>@<span class="number">1</span>),
+        <span class="kw">let</span> <span class="ident">key</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">type_</span> {
+            <span class="ident">PluralRuleType</span>::<span class="ident">Cardinal</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">provider</span>::<span class="ident">key</span>::<span class="ident">CARDINAL_V1</span>,
+            <span class="ident">PluralRuleType</span>::<span class="ident">Ordinal</span> <span class="op">=</span><span class="op">&gt;</span> <span class="ident">provider</span>::<span class="ident">key</span>::<span class="ident">ORDINAL_V1</span>,
         };
-        <span class="kw">let</span> <span class="ident">response</span> <span class="op">=</span> <span class="ident">data_provider</span>.<span class="ident">load</span>(<span class="kw-2">&amp;</span><span class="ident">DataRequest</span> {
-            <span class="ident">data_key</span>,
-            <span class="ident">data_entry</span>: <span class="ident">DataEntry</span> {
-                <span class="ident">variant</span>: <span class="prelude-val">None</span>,
-                <span class="ident">langid</span>: <span class="ident">langid</span>.<span class="ident">clone</span>(),
-            },
-        })<span class="question-mark">?</span>;
-        <span class="kw">let</span> <span class="ident">plurals_data</span>: <span class="ident">Cow</span><span class="op">&lt;</span><span class="ident">structs</span>::<span class="ident">plurals</span>::<span class="ident">PluralRuleStringsV1</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">response</span>.<span class="ident">take_payload</span>()<span class="question-mark">?</span>;
+        <span class="kw">let</span> <span class="ident">plurals_data</span> <span class="op">=</span> <span class="ident">data_provider</span>
+            .<span class="ident">load_payload</span>(<span class="kw-2">&amp;</span><span class="ident">DataRequest</span> {
+                <span class="ident">resource_path</span>: <span class="ident">ResourcePath</span> {
+                    <span class="ident">key</span>,
+                    <span class="ident">options</span>: <span class="ident">ResourceOptions</span> {
+                        <span class="ident">variant</span>: <span class="prelude-val">None</span>,
+                        <span class="ident">langid</span>: <span class="prelude-val">Some</span>(<span class="ident">langid</span>.<span class="ident">clone</span>()),
+                    },
+                },
+            })<span class="question-mark">?</span>
+            .<span class="ident">take_payload</span>()<span class="question-mark">?</span>;
 
         <span class="kw">let</span> <span class="ident">list</span>: <span class="ident">data</span>::<span class="ident">PluralRuleList</span> <span class="op">=</span> (<span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">plurals_data</span>).<span class="ident">try_into</span>()<span class="question-mark">?</span>;
 
@@ -685,7 +668,7 @@
     <span class="doccomment">/// ```</span>
     <span class="doccomment">/// use icu_locid_macros::langid;</span>
     <span class="doccomment">/// use icu_plurals::{PluralRules, PluralRuleType, PluralCategory};</span>
-    <span class="doccomment">/// use icu_provider::InvariantDataProvider;</span>
+    <span class="doccomment">/// use icu_provider::inv::InvariantDataProvider;</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// let lid = langid!(&quot;en&quot;);</span>
     <span class="doccomment">///</span>
@@ -715,7 +698,7 @@
     <span class="doccomment">/// # use icu_locid_macros::langid;</span>
     <span class="doccomment">/// # use icu_plurals::{PluralRules, PluralRuleType};</span>
     <span class="doccomment">/// use icu_plurals::{PluralCategory, PluralOperands};</span>
-    <span class="doccomment">/// # use icu_provider::InvariantDataProvider;</span>
+    <span class="doccomment">/// # use icu_provider::inv::InvariantDataProvider;</span>
     <span class="doccomment">/// #</span>
     <span class="doccomment">/// # let lid = langid!(&quot;en&quot;);</span>
     <span class="doccomment">/// #</span>
@@ -733,8 +716,8 @@
     <span class="doccomment">/// assert_eq!(pr.select(operands2), PluralCategory::Other);</span>
     <span class="doccomment">/// ```</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// [`Plural Category`]: ./enum.PluralCategory.html</span>
-    <span class="doccomment">/// [`Plural Operands`]: ./operands/struct.PluralOperands.html</span>
+    <span class="doccomment">/// [`Plural Category`]: PluralCategory</span>
+    <span class="doccomment">/// [`Plural Operands`]: operands::PluralOperands</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">select</span><span class="op">&lt;</span><span class="ident">I</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">PluralOperands</span><span class="op">&gt;</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">input</span>: <span class="ident">I</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">PluralCategory</span> {
         <span class="self">self</span>.<span class="ident">selector</span>.<span class="ident">select</span>(<span class="kw-2">&amp;</span><span class="ident">input</span>.<span class="ident">into</span>())
     }

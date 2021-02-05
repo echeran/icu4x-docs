@@ -1,0 +1,693 @@
+{
+  "dhatFileVersion": 2,
+  "mode": "rust-heap",
+  "verb": "Allocated",
+  "bklt": true,
+  "bkacc": false,
+  "tu": "µs",
+  "Mtu": "s",
+  "tuth": 10,
+  "cmd": "target/release/examples/elevator_floors",
+  "pid": 5622,
+  "tg": 235,
+  "te": 304,
+  "pps": [
+    {
+      "tb": 85,
+      "tbk": 1,
+      "tl": 2,
+      "mb": 85,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "tb": 77,
+      "tbk": 1,
+      "tl": 3,
+      "mb": 77,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13
+      ]
+    },
+    {
+      "tb": 48,
+      "tbk": 1,
+      "tl": 29,
+      "mb": 48,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        15
+      ]
+    },
+    {
+      "tb": 336,
+      "tbk": 3,
+      "tl": 10,
+      "mb": 192,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 40,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        20,
+        17,
+        21
+      ]
+    },
+    {
+      "tb": 28,
+      "tbk": 1,
+      "tl": 71,
+      "mb": 28,
+      "mbk": 1,
+      "gb": 28,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "tb": 336,
+      "tbk": 3,
+      "tl": 32,
+      "mb": 192,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        16,
+        17,
+        21
+      ]
+    },
+    {
+      "tb": 8,
+      "tbk": 1,
+      "tl": 0,
+      "mb": 8,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "tb": 58,
+      "tbk": 1,
+      "tl": 218,
+      "mb": 58,
+      "mbk": 1,
+      "gb": 58,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        33
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 48,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        34,
+        17,
+        35
+      ]
+    },
+    {
+      "tb": 73,
+      "tbk": 1,
+      "tl": 23,
+      "mb": 73,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        36
+      ]
+    },
+    {
+      "tb": 174,
+      "tbk": 2,
+      "tl": 73,
+      "mb": 116,
+      "mbk": 1,
+      "gb": 116,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        37
+      ]
+    },
+    {
+      "tb": 80,
+      "tbk": 2,
+      "tl": 23,
+      "mb": 64,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        38,
+        39,
+        21
+      ]
+    },
+    {
+      "tb": 24,
+      "tbk": 2,
+      "tl": 0,
+      "mb": 16,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        30,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "tb": 40,
+      "tbk": 2,
+      "tl": 152,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 8,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        38,
+        54,
+        55,
+        56
+      ]
+    },
+    {
+      "tb": 80,
+      "tbk": 2,
+      "tl": 44,
+      "mb": 64,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        38,
+        39,
+        35
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 57,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        20,
+        17,
+        35
+      ]
+    },
+    {
+      "tb": 28,
+      "tbk": 1,
+      "tl": 78,
+      "mb": 28,
+      "mbk": 1,
+      "gb": 28,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        22,
+        23,
+        57,
+        25
+      ]
+    },
+    {
+      "tb": 80,
+      "tbk": 2,
+      "tl": 2,
+      "mb": 64,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        38,
+        39,
+        18
+      ]
+    },
+    {
+      "tb": 159,
+      "tbk": 2,
+      "tl": 72,
+      "mb": 106,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        58
+      ]
+    },
+    {
+      "tb": 8192,
+      "tbk": 1,
+      "tl": 34,
+      "mb": 8192,
+      "mbk": 1,
+      "gb": 8192,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        59
+      ]
+    },
+    {
+      "tb": 85,
+      "tbk": 1,
+      "tl": 2,
+      "mb": 85,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        60
+      ]
+    },
+    {
+      "tb": 174,
+      "tbk": 2,
+      "tl": 65,
+      "mb": 116,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        61
+      ]
+    },
+    {
+      "tb": 28,
+      "tbk": 1,
+      "tl": 66,
+      "mb": 28,
+      "mbk": 1,
+      "gb": 28,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        22,
+        23,
+        62,
+        25
+      ]
+    },
+    {
+      "tb": 2496,
+      "tbk": 5,
+      "tl": 151,
+      "mb": 1024,
+      "mbk": 1,
+      "gb": 576,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        38,
+        63,
+        56
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 19,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        20,
+        17,
+        18
+      ]
+    },
+    {
+      "tb": 336,
+      "tbk": 3,
+      "tl": 48,
+      "mb": 192,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        16,
+        17,
+        35
+      ]
+    },
+    {
+      "tb": 343,
+      "tbk": 1,
+      "tl": 20,
+      "mb": 343,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        64
+      ]
+    },
+    {
+      "tb": 19,
+      "tbk": 1,
+      "tl": 2,
+      "mb": 19,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 10,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        34,
+        17,
+        18
+      ]
+    },
+    {
+      "tb": 144,
+      "tbk": 2,
+      "tl": 6,
+      "mb": 96,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        69
+      ]
+    },
+    {
+      "tb": 56,
+      "tbk": 3,
+      "tl": 19,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 32,
+      "gbk": 1,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        70,
+        71,
+        72,
+        73,
+        25
+      ]
+    },
+    {
+      "tb": 32,
+      "tbk": 1,
+      "tl": 32,
+      "mb": 32,
+      "mbk": 1,
+      "gb": 0,
+      "gbk": 0,
+      "eb": 0,
+      "ebk": 0,
+      "fs": [
+        14,
+        19,
+        34,
+        17,
+        21
+      ]
+    }
+  ],
+  "ftbl": [
+    "[root]",
+    "0x55892e5d45df: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc.rs:226:9)",
+    "0x55892e5d45df: alloc::raw_vec::RawVec<T,A>::allocate_in (raw_vec.rs:201:45)",
+    "0x55892e5d45df: alloc::raw_vec::RawVec<T,A>::with_capacity_in (raw_vec.rs:142:9)",
+    "0x55892e5d45df: alloc::vec::Vec<T,A>::with_capacity_in (mod.rs:574:20)",
+    "0x55892e5d45df: alloc::vec::Vec<T>::with_capacity (mod.rs:440:9)",
+    "0x55892e5d45df: <&[u8] as std::ffi::c_str::CString::new::SpecIntoVec>::into_vec (c_str.rs:388:29)",
+    "0x55892e5c1274: std::ffi::c_str::CString::new (c_str.rs:401:20)",
+    "0x55892e5c1274: std::sys::unix::fs::cstr (fs.rs:912:8)",
+    "0x55892e5c1274: std::sys::unix::fs::File::open (fs.rs:732:20)",
+    "0x55892e5c1274: std::fs::OpenOptions::_open (fs.rs:923:9)",
+    "0x55892e5997f8: main (???:0:0)",
+    "0x55892e5a2b6e: std::fs::metadata (???:0:0)",
+    "0x55892e59965b: main (???:0:0)",
+    "0x55892e593198: <dhat::DhatAlloc as core::alloc::global::GlobalAlloc>::alloc (???:0:0)",
+    "0x55892e5975a9: main (???:0:0)",
+    "0x55892e59e801: icu_plurals::rules::parser::Parser::get_and_condition (???:0:0)",
+    "0x55892e59fc21: icu_plurals::data::parse_rule (???:0:0)",
+    "0x55892e59a2d3: main (???:0:0)",
+    "0x55892e59ee7f: icu_plurals::rules::parser::Parser::get_relation (???:0:0)",
+    "0x55892e59e781: icu_plurals::rules::parser::Parser::get_and_condition (???:0:0)",
+    "0x55892e59a28d: main (???:0:0)",
+    "0x55892e561556: <&mut serde_json::de::Deserializer<R> as serde::de::Deserializer>::deserialize_string (???:0:0)",
+    "0x55892e596b0e: serde::de::impls::<impl serde::de::Deserialize for core::option::Option<T>>::deserialize (???:0:0)",
+    "0x55892e562202: <&mut serde_json::de::Deserializer<R> as serde::de::Deserializer>::deserialize_struct (???:0:0)",
+    "0x55892e5998d8: main (???:0:0)",
+    "0x55892e5da4a9: alloc::raw_vec::finish_grow (???:0:0)",
+    "0x55892e5da42d: alloc::raw_vec::RawVec<T,A>::reserve (???:0:0)",
+    "0x55892e5a1b7a: <&mut W as core::fmt::Write>::write_str (???:0:0)",
+    "0x55892e5a0e58: <&T as core::fmt::Display>::fmt (???:0:0)",
+    "0x55892e582b7c: core::fmt::write (mod.rs:1096:17)",
+    "0x55892e5a08a4: <icu_provider::resource::ResourceOptionsComponents as core::convert::From<&icu_provider::resource::ResourceOptions>>::from (???:0:0)",
+    "0x55892e5996a0: main (???:0:0)",
+    "0x55892e597711: main (???:0:0)",
+    "0x55892e59e8cc: icu_plurals::rules::parser::Parser::get_and_condition (???:0:0)",
+    "0x55892e59a24c: main (???:0:0)",
+    "0x55892e5977e8: main (???:0:0)",
+    "0x55892e599321: main (???:0:0)",
+    "0x55892e5a484f: alloc::raw_vec::finish_grow (???:0:0)",
+    "0x55892e59fd48: icu_plurals::data::parse_rule (???:0:0)",
+    "0x55892e5638c4: alloc::raw_vec::finish_grow (raw_vec.rs:0:0)",
+    "0x55892e563b5c: alloc::raw_vec::RawVec<T,A>::grow_amortized (raw_vec.rs:421:19)",
+    "0x55892e563b5c: alloc::raw_vec::RawVec<T,A>::try_reserve (raw_vec.rs:325:13)",
+    "0x55892e563b5c: alloc::raw_vec::RawVec<T,A>::reserve (raw_vec.rs:319:24)",
+    "0x55892e563b5c: alloc::vec::Vec<T,A>::reserve (mod.rs:774:9)",
+    "0x55892e563b5c: alloc::vec::Vec<T,A>::append_elements (mod.rs:1553:9)",
+    "0x55892e563b5c: <alloc::vec::Vec<T,A> as alloc::vec::spec_extend::SpecExtend<&T,core::slice::iter::Iter<T>>>::spec_extend (spec_extend.rs:80:18)",
+    "0x55892e563b5c: alloc::vec::Vec<T,A>::extend_from_slice (mod.rs:1908:9)",
+    "0x55892e563b5c: alloc::string::String::push_str (string.rs:823:9)",
+    "0x55892e563b5c: <alloc::string::String as core::fmt::Write>::write_str (string.rs:2421:9)",
+    "0x55892e563b5c: <&mut W as core::fmt::Write>::write_str (mod.rs:189:9)",
+    "0x55892e563a77: core::fmt::Write::write_fmt (mod.rs:182:9)",
+    "0x55892e563a77: alloc::fmt::format (fmt.rs:578:5)",
+    "0x55892e5994e8: main (???:0:0)",
+    "0x55892e59e57b: alloc::vec::Vec<T,A>::insert (???:0:0)",
+    "0x55892e5a5ca9: icu_provider_fs::manifest::_::<impl serde::de::Deserialize for icu_provider_fs::manifest::LocalesOption>::deserialize (???:0:0)",
+    "0x55892e59858a: main (???:0:0)",
+    "0x55892e562150: <&mut serde_json::de::Deserializer<R> as serde::de::Deserializer>::deserialize_struct (???:0:0)",
+    "0x55892e597670: main (???:0:0)",
+    "0x55892e59981c: main (???:0:0)",
+    "0x55892e5997ab: main (???:0:0)",
+    "0x55892e597756: main (???:0:0)",
+    "0x55892e5622b4: <&mut serde_json::de::Deserializer<R> as serde::de::Deserializer>::deserialize_struct (???:0:0)",
+    "0x55892e5a6077: icu_provider_fs::manifest::_::<impl serde::de::Deserialize for icu_provider_fs::manifest::LocalesOption>::deserialize (???:0:0)",
+    "0x55892e597917: main (???:0:0)",
+    "0x55892e5b964e: std::ffi::c_str::CString::new (c_str.rs:401:20)",
+    "0x55892e5b964e: std::sys::unix::os::getenv (os.rs:541:13)",
+    "0x55892e5b964e: std::env::_var_os (env.rs:241:5)",
+    "0x55892e597568: main (???:0:0)",
+    "0x55892e5975f7: main (???:0:0)",
+    "0x55892e596fb9: alloc::raw_vec::finish_grow (???:0:0)",
+    "0x55892e597148: alloc::vec::Vec<T,A>::reserve (???:0:0)",
+    "0x55892e596312: <serde_json::read::IoRead<R> as serde_json::read::Read>::parse_str (???:0:0)",
+    "0x55892e56183c: <&mut serde_json::de::Deserializer<R> as serde::de::Deserializer>::deserialize_struct (???:0:0)"
+  ]
+}
