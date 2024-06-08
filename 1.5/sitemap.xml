@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://echeran.github.io/icu4x-docs/1.5/en/sitemap.xml</loc>
+    
+      <lastmod>2024-06-07T17:16:58-07:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://echeran.github.io/icu4x-docs/1.5/fa/sitemap.xml</loc>
+    
+      <lastmod>2024-06-07T14:40:15-07:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://echeran.github.io/icu4x-docs/1.5/no/sitemap.xml</loc>
+    
+      <lastmod>2024-06-07T14:40:15-07:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
