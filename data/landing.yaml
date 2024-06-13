@@ -1,0 +1,54 @@
+hero:
+  enable: true
+  weight: 10
+  template: hero
+
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
+
+  badge:
+    text: v1.5.0
+    color: primary # primary, secondary, success, danger, warning, info, light, dark
+    pill: false # boolean
+    soft: true # boolean
+
+  title: "ICU4X"
+  subtitle: "Solving i18n for client-side and resource-constrained environments."
+  info: "_Open Source, Rust, more APIs in C++, C, JS (WASM)_"
+  
+  ctaButton:
+    icon: rocket_launch
+    btnText: "Get Started"
+    url: "/docs/quickstart/"
+  cta2Button:
+    icon: construction
+    btnText: "Help Development"
+    url: "https://github.com/unicode-org/icu4x"
+
+# Feature Grid  
+features:
+  enable: true
+  weight: 20
+  title: Reasons to use ICU4X
+
+  subtitle: | 
+    ICU4X aims to provide internationalization (i18n) functionality in resource constrained environments,
+    across programming languages, and in a performant way.
+  
+  items:
+    - title: Small and fast
+      icon: speed
+      description: ICU4X floats like a butterfly and stings like a bee
+    - title: Use natively
+      icon: code_blocks
+      description: ICU4X is designed to support multiple programming languages automatically, and to increase that list over time
+    - title: i18n best practices
+      icon: star
+      description: ICU4X promotes the latest best practices for i18n using (or creating) the latest API designs that prevent known pitfalls
+
+
+image_compare:
+  enable: false
