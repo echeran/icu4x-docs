@@ -1,10 +1,10 @@
 ---
-weight: 15000200
-title: "Quickstart"
-description: "Introduction to ICU4X for Rust"
-icon: "rocket_launch"
-date: "2024-06-13T16:47:45-07:00"
-lastmod: "2024-06-13T16:47:45-07:00"
+weight: 12000320
+title: "Introduction"
+description: "Building an Interactive Date Picker with ICU4X"
+icon: "key"
+date: "2023-05-22T00:44:31+01:00"
+lastmod: "2023-05-22T00:44:31+01:00"
 draft: false
 toc: true
 ---
@@ -17,7 +17,7 @@ To use `ICU4X` in the Rust ecosystem one can either add dependencies on selected
 
 In this tutorial we are going to build up to writing an app that uses the `icu::datetime` component to format a date and time, covering various topics in the process.
 
-## 1. Requirements
+# 1. Requirements
 
 For this tutorial we assume the user has basic Rust knowledge. If acquiring it is necessary, the [Rust Book](https://doc.rust-lang.org/book/) provides an excellent introduction.
 We also assume that the user is familiar with a terminal and have `rust` and `cargo` installed.
@@ -26,10 +26,10 @@ To verify that, open a terminal and check that the results are similar to:
 
 ```console
 $ cargo --version
-cargo 1.71.1 (7f1d04c00 2023-07-29)
+cargo 1.64.0 (387270bc7 2022-09-16)
 ```
 
-## 2. Creating an app with ICU4X as a dependency
+# 2. Creating an app with ICU4X as a dependency
 
 Use `cargo` to initialize a binary application:
 
@@ -44,24 +44,24 @@ Then add a dependency on `ICU4X`'s main crate, `icu`:
 $ cargo add icu
 ```
 
-## 3. Locales
+# 3. Locales
 
 `ICU4X` comes with a variety of components allowing to manage various facets of software internationalization.
 
 Most of those features depend on the selection of a `Locale` which is a particular combination of language, script, region with optional variants. An examples of such locales are `en-US` (American English), `sr-Cyrl` (Serbian with Cyrillic script) or `ar-EG-u-nu-latn` (Egyptian Arabic with ASCII numerals).
 
-In `ICU4X` `Locale` is a part of the `locale_core` component. If the user needs just this one feature, they can use `icu_locale_core` crate as a dependency, but since here we already added a dependency on `icu`, we can refer to it via `icu::locale`.
+In `ICU4X` `Locale` is a part of the `locid` component. If the user needs just this one feature, they can use `icu_locid` crate as a dependency, but since here we already added a dependency on `icu`, we can refer to it via `icu::locid`.
 
 Let's use this in our application.
 
 Open `src/main.rs` and edit it to:
 
 ```rust
-use icu::locale::Locale;
+use icu::locid::Locale;
 
 fn main() {
     let loc: Locale = "ES-AR".parse()
-        .expect("should be a valid locale");
+        .expect("Failed to parse locale.");
 
     if loc.id.language.as_str() == "es" {
         println!("¡Hola!");
@@ -82,7 +82,7 @@ You are using: es-AR
 
 Congratulations! `ICU4X` has been used to semantically operate on a locale!
 
-### Convenience macro
+## Convenience macro
 
 The scenario of working with statically declared `Locale`s is common.
 
@@ -91,7 +91,7 @@ It's a bit unergonomic to have to parse them at runtime and handle a parser erro
 For that purpose, ICU4X provides a macro one can use to parse it at compilation time:
 
 ```rust
-use icu::locale::{Locale, locale};
+use icu::locid::{Locale, locale};
 
 const LOCALE: Locale = locale!("ES-AR");
 
@@ -108,32 +108,52 @@ In this case, the parsing is performed at compilation time, so we don't need to 
 
 Next, let's add some more complex functionality.
 
-## 4. Using an ICU4X component
+# 4. Basic Data Management
 
-We're going to extend our app to use the `icu::datetime` component to format a date and time. This component requires data; we will look at custom data generation later and for now use the default included data,
-which is exposed through constructors such as `try_new`.
+While the locale API is purely algorithmic, many internationalization APIs require more complex data to work. Data management is a complex and non-trivial area which often requires customizations for particular environments and integrations into a project's ecosystem.
+
+The way `ICU4X` handles data is one of its novelties, aimed at making the data management more flexible and enabling better integration in asynchronous environments.
+
+As a result, compared to most internationalization solutions, working with data in `ICU4X` is a bit more explicit. `ICU4X` provides a trait called `DataProvider` (as well as `BufferProvider` and `AnyProvider`) and a number of concrete APIs that implement these traits for different scenarios.
+Users are also free to design their own providers that best fit into their ecosystem requirements.
+
+`BufferProvider` and `AnyProvider` abstract over different ways the data may be loaded: `BufferProvider` abstracts over data providers that deserialize data, whereas `AnyProvider` abstracts over data providers that can provide concrete Rust objects.
+
+# 5. Using an ICU4X component
+
+We're going to extend our app to use the `icu::datetime` component to format a date and time. This component requires data, but as we don't want to jump into data management just yet, we will use `ICU4X`'s `icu_testdata` crate. This contains test providers that support all ICU4X keys for a small representative set of locales. It contains a `BufferProvider` (`icu_testdata::buffer()`), an `AnyProvider` (`icu_testdata::any()`), and an unstable data provider (`icu_testdata::unstable()`). The latter two require fewer Cargo features, so we will be using those.
+
+First, we need to add the crate to our `Cargo.toml`:
+
+```console
+$ cargo add icu_testdata
+```
+
+We can then use it in our code to format a date:
 
 ```rust
-use icu::locale::{Locale, locale};
+use icu::locid::{Locale, locale};
 use icu::calendar::DateTime;
 use icu::datetime::{DateTimeFormatter, options::length};
 
 const LOCALE: Locale = locale!("ja"); // let's try some other language
 
 fn main() {
+    let provider = icu_testdata::any();
+
     let options = length::Bag::from_date_time_style(length::Date::Long, length::Time::Medium);
 
-    let dtf = DateTimeFormatter::try_new(&LOCALE.into(), options.into())
-        .expect("ja data should be available");
+    let dtf = DateTimeFormatter::try_new_with_any_provider(&provider, &LOCALE.into(), options.into())
+        .expect("Failed to initialize DateTimeFormatter");
 
     let date = DateTime::try_new_iso_datetime(2020, 10, 14, 13, 21, 28)
-        .expect("datetime should be valid");
+        .expect("Failed to create a datetime.");
 
     // DateTimeFormatter supports the ISO and native calendars as input via DateTime<AnyCalendar>.
     // For smaller codesize you can use TypedDateTimeFormatter<Gregorian> with a DateTime<Gregorian>
     let date = date.to_any();
 
-    let formatted_date = dtf.format(&date).expect("formatting should succeed");
+    let formatted_date = dtf.format(&date).expect("Formatting should succeed");
 
     println!("📅: {}", formatted_date);
 }
@@ -149,25 +169,9 @@ Here's an internationalized date!
 
 *Notice:* By default, `cargo run` builds and runs a `debug` mode of the binary. If you want to evaluate performance, memory or size of this example, use `cargo run --release`.
 
-
-## 5. Data Management
-
-While the locale API is purely algorithmic, many internationalization APIs like the date formatting API require more complex data to work. You've seen this in the previous example where we had to call `.expect("ja data should be available")` after the constructor.
-
-Data management is a complex and non-trivial area which often requires customizations for particular environments and integrations into a project's ecosystem.
-
-The way `ICU4X` handles data is one of its novelties, aimed at making the data management more flexible and enabling better integration in asynchronous environments.
-
-`ICU4X` by default contains data for a a wide range of CLDR locales[^1], meaning that for most languages, the constructors can be considered infallible and you can `expect` or `unwrap` them, as we did above.
-
-However, shipping the library with all locales will have a size impact on your binary. It also requires you to update your binary whenever CLDR data changes, which happens twice a year. To learn how to solve these problems, see our [data management](data_management.md) tutorial.
-
-[^1]: All locales with coverage level `basic`, `moderate`, or `modern` in [`CLDR`](https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-core/coverageLevels.json)
-
-## 6. Summary
+# 6. Summary
 
 This concludes this introduction tutorial. With the help of `DateTimeFormat`, `Locale` and `DataProvider` we formatted a date to Japanese, but that's just the start. 
-
 Internationalization is a broad domain and there are many more components in `ICU4X`.
 
-Next, learn how to [generate optimized data for your binary](data_management.md), [configure your Cargo.toml file](rust.md), or continue exploring by reading [the docs](https://docs.rs/icu/latest/).
+Next, learn how to [generate optimized data for your binary](data_management.md) or [configure your Cargo.toml file](cargo.md), or continue exploring by reading [the docs](https://docs.rs/icu/latest/).

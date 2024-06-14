@@ -1,5 +1,5 @@
 ---
-weight: 15000310
+weight: 12000310
 title: "Tutorials"
 icon: "folder"
 date: "2024-06-14T12:53:57+01:00"

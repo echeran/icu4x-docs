@@ -1,4 +1,5 @@
 ---
+weight: 15000320
 title: "Introduction"
 description: "Building an Interactive Date Picker with ICU4X"
 icon: "key"
@@ -6,7 +7,6 @@ date: "2023-05-22T00:44:31+01:00"
 lastmod: "2023-05-22T00:44:31+01:00"
 draft: false
 toc: true
-weight: 015000320
 ---
 
 In this tutorial, you will learn how to build an end-to-end application using ICU4X to format a date and time with some default locales and additional locales loaded dynamically.
