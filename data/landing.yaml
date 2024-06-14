@@ -1,3 +1,9 @@
+# fields to update for new versions:
+#
+# - hero.badge.text
+# - hero.ctaButton.url
+#
+
 hero:
   enable: true
   weight: 10
