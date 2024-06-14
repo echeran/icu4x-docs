@@ -18,9 +18,30 @@ params:
   docs:
     # themeColor: emerald
     title: ICU4X Docs
-    intLinkTooltip: true
+    
     sidebarIcons: true
     titleIcon: true
+
+    toc: true
+    tocMobile: true
+    scrollspy: true
+
+    descriptions: true
+    breadcrumbs: true
+    backToTop: true
+
+    navDesc: true
+    navDescTrunc: 30
+
+    listDescTruc: 100
+
+    intLinkTooltip: true
+
+    repoURL: "https://github.com/unicode-org/icu4x"
+    repoBranch: "main"
+    editPage: false
+    lastMod: true
+    lastModRelative: true
 
 menu:
     primary:
