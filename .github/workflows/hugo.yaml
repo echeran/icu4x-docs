@@ -36,8 +36,12 @@ jobs:
     steps:
     - uses: actions/setup-go@v5
       with:
-        go-version: '^1.23' # The Go version to download (if necessary) and use.
-        check-latest: true
+        go-version: '1.22.4' # The Go version to download (if necessary) and use.
+        # Note: for local development, you can install and use go1.22.4 with the followign commands
+        # go install golang.org/dl/go1.22.4@latest
+        # go1.22.4 download
+        # export GOROOT=$(go1.22.4 env GOROOT)
+        # export PATH=${GOROOT}/bin;${PATH}
     - run: go version
     - name: Install Hugo CLI
       run: |
