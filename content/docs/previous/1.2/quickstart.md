@@ -1,5 +1,5 @@
 ---
-weight: 12000200
+weight: 10200200
 title: "Quickstart"
 description: "Introduction to ICU4X for Rust"
 icon: "rocket_launch"

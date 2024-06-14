@@ -1,5 +1,5 @@
 ---
-weight: 12000320
+weight: 10200320
 title: "Introduction"
 description: "Building an Interactive Date Picker with ICU4X"
 icon: "key"
