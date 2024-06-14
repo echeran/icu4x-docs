@@ -17,7 +17,7 @@ hero:
 
   title: "ICU4X"
   subtitle: "Solving i18n for client-side and resource-constrained environments."
-  info: "_Open Source, Rust, more APIs in C++, C, JS (WASM)_"
+  info: "_Open Source, written in Rust, more APIs in C++, C, JS (WASM)_"
   
   ctaButton:
     icon: rocket_launch

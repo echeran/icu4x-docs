@@ -16,9 +16,11 @@ params:
   social:
     github: unicode-org/icu4x
   docs:
-    themeColor: emerald
+    # themeColor: emerald
     title: ICU4X Docs
     intLinkTooltip: true
+    sidebarIcons: true
+    titleIcon: true
 
 menu:
     primary:
