@@ -13,11 +13,38 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Getting Started',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' },
           { text: 'Overview', link: '/overview' },
+        ]
+      },
+      {
+        text: 'Version 1.5',
+        items: [
+          { text: 'Quickstart', link: '/1.5/quickstart' },
+          { text: 'Tutorials',
+            items: [
+              { text: 'Introduction', link: '/1.5/tutorials/introduction' }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'Previous Versions',
+        items: [
+          {
+            text: 'Version 1.2',
+            items: [
+              { text: 'Quickstart', link: '/previous/1.2/quickstart' },
+              { text: 'Tutorials',
+                items: [
+                  { text: 'Introduction', link: '/1.2/tutorials/introduction' }
+                ]
+              }
+            ]
+          }
         ]
       }
     ],
