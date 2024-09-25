@@ -9,6 +9,8 @@ draft: false
 toc: true
 ---
 
+# Introduction
+
 In this tutorial, you will learn how to build an end-to-end application using ICU4X to format a date and time with some default locales and additional locales loaded dynamically.
 
 This tutorial is written in parallel between **Rust** and **JavaScript** in a web browser.

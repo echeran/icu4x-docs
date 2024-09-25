@@ -8,7 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Getting Started', link: '/overview' }
     ],
 
     sidebar: [
@@ -33,11 +33,13 @@ export default defineConfig({
       },
       {
         text: 'Previous Versions',
+        collapsed: false,
         items: [
           {
             text: 'Version 1.2',
+            collapsed: true,
             items: [
-              { text: 'Quickstart', link: '/previous/1.2/quickstart' },
+              { text: 'Quickstart', link: '/1.2/quickstart' },
               { text: 'Tutorials',
                 items: [
                   { text: 'Introduction', link: '/1.2/tutorials/introduction' }
