@@ -5,21 +5,21 @@ layout: home
 hero:
   name: "ICU4X"
   text: "Solving i18n for client-side and resource-constrained environments"
-  tagline: An open source project from the Unicode Consortium, written in Rust, more APIs in C++, C, JS (WASM)
+  tagline: An open source project from the Unicode Consortium, written in Rust, with more APIs in C++, C, JS (WASM)
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get started
+      link: /overview
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Contribute
+      link: https://www.github.com/unicode-org/icu4x
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Small and fast
+    details: ICU4X floats like a butterfly and stings like a bee
+  - title: Use natively
+    details: ICU4X is designed to support multiple programming languages automatically, and to increase that list over time
+  - title: i18n best practices
+    details: ICU4X promotes the latest best practices for i18n using (or creating) the latest API designs that prevent known pitfalls
 ---
 

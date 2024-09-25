@@ -15,8 +15,6 @@ export default defineConfig({
       {
         text: 'Getting Started',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
           { text: 'Overview', link: '/overview' },
         ]
       },
@@ -52,7 +50,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/unicode-org/icu4x' }
     ]
   }
 })
