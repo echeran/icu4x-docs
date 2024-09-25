@@ -2,6 +2,10 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+
+  // TODO: Remove or set to false once the initial population of content is done.
+  ignoreDeadLinks: true,
+
   title: "ICU4X",
   description: "Solving i18n for client-side and resource-constrained environments",
   themeConfig: {
