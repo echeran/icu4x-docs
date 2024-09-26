@@ -3,6 +3,9 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
 
+  // base path of the URL's domain. definitely needed for Github Pages.
+  base: '/icu4x-docs/',
+
   // TODO: Remove or set to false once the initial population of content is done.
   ignoreDeadLinks: true,
 
